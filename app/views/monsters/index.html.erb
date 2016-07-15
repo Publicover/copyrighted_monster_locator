@@ -1,0 +1,32 @@
+<center>
+
+<br>
+
+<h1> ALL THE MONSTERS </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rarity</th>
+    <th>Location</th>
+    <th>City</th>
+    <th>State</th>
+  </tr>
+
+  <% @monsters.each do |monster| %>
+    <tr>
+      <td><%= monster.name %></td>
+      <td><%= monster.rarity %></td>
+      <td><%= monster.location.try(:address) %> </td>
+      <td><%= monster.location.try(:city) %> </td>
+      <td><%= monster.location.try(:state) %> </td>
+      <td><%= link_to "DESTROY MONSTER", [monster.location, monster],
+                                    method: :delete,
+                                    data: { confirm: "Hope you know what you're doing" } %>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+<%= link_to "GOT A NEW LOCATION?", new_location_path %> <br>
+<%= link_to "SEE ALL THE LOCATIONS", controller: "locations" %>
