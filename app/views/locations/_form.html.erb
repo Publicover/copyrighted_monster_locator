@@ -1,0 +1,51 @@
+<%= form_for @location do |f| %>
+
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@location.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :city %><br>
+    <%= f.select :city, [["Greensboro"], ["Durham"]] %>
+  </p>
+
+  <p>
+    <%= f.label :state %><br>
+    <%= f.select :state, ["North Carolina"] %>
+  </p>
+
+  <p>
+    <%= f.label 'checkpoint_true', 'yup' %>
+    <%= f.radio_button :checkpoint, true %>
+  </p>
+
+  <p>
+    <%= f.label 'checkpoint_true', 'nah' %>
+    <%= f.radio_button :checkpoint, false %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
