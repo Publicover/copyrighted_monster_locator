@@ -1,28 +1,5 @@
-== README
+== POCKET MONSTER LOCATOR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a database of locations from the new mobile game Pokemon Go. It tracks which monsters appear at which locations. Each address can be run through the Google Geolocation API to produce an embedded map. Anyone can view the information (including the Google Maps functions) but users must be signed in to create and destroy records. It works on mobile but has not been optimized for ios. Right now, locations are locked down to cities where data testers live: Durham, Greensboro and Ashtabula (Ohio). 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+It has been deployed to heroku at pocketmonsterlocator.herokuapp.com.
